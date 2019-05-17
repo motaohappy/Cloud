@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		
+		<title></title>
+	<script src="http://oss.sheetjs.com/js-xlsx/xlsx.core.min.js"></script>
+	<script>
+
+		var need_length = 6
+		function addtr(){
+			var tableobj =document.getElementById("tid");
+			var trobj =document.createElement("tr");
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="project name" style="width:100%; height:100%;" placeholder="Name" class="project name"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="effort" style="width:100%; height:100%;" placeholder="Effort" class="effort"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="pod" style="width:100%; height:100%;" placeholder="Pod" class="pod"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="it pm" style="width:100%; height:100%;" placeholder="IT PM" class="it pm"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="transfer pm" style="width:100%; height:100%;" placeholder="Transfer PM" class="transfer pm"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="story ready" style="width:100%; height:100%;" placeholder="Story Ready" class="story ready"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="country" style="width:100%; height:100%;" placeholder="Country" class="country"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="start day" style="width:100%; height:100%;" placeholder="Start day" class="start day"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="SIT day" style="width:100%; height:100%;" placeholder="SIT day" class="SIT day"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="UAT day" style="width:100%; height:100%;" placeholder="UAT day" class="UAT day"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="end day" style="width:100%; height:100%;" placeholder="End day" class="end day"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="remark" style="width:100%; height:100%;" placeholder="Remark" class="remark"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML="<input type='button' value='删除' onclick=delecttr(this)  class='btn btn-danger'> <input type='button' value='保存' onclick=savecttr(this)  class='btn btn-success'>";
+			trobj.appendChild(tdobj);
+			tableobj.appendChild(trobj);
+		}
+
+		function delecttr(obj){
+			var tr = obj.parentNode.parentNode;
+			tr.parentNode.removeChild(tr);
+		}
+
+		function savecttr(obj){
+			var tr = obj.parentNode.parentNode; 
+
+			var trobj =document.createElement("tr");
+
+		
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("project name")[0].value;
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("effort")[0].value;
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("pod")[0].value;
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("it pm")[0].value;
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("transfer pm")[0].value;
+			trobj.appendChild(tdobj);
+						var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("story ready")[0].value;
+			trobj.appendChild(tdobj);
+						var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("country")[0].value;
+			trobj.appendChild(tdobj);
+						var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("start day")[0].value;
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("SIT day")[0].value;
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("UAT day")[0].value;
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("end day")[0].value;
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML = tr.getElementsByClassName("remark")[0].value;
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML="<input type='button' value='删除' onclick=delecttr(this)  class='btn btn-danger'> <input type='button' value='修改' onclick=changecttr(this)  class='btn btn-warning'>";
+			trobj.appendChild(tdobj);
+
+			tr.parentNode.replaceChild(trobj,tr);
+		}
+
+		function changecttr(obj){
+			var tr = obj.parentNode.parentNode; 
+
+			var trobj =document.createElement("tr");
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="project name" style="width:100%; height:100%;" value="'+tr.cells[1].innerHTML+'" class="project name"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="effort" style="width:100%; height:100%;" value="'+tr.cells[2].innerHTML+'" class="effort"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="pod" style="width:100%; height:100%;" value="'+tr.cells[5].innerHTML+'" class="pod"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="it pm" style="width:100%; height:100%;" value="'+tr.cells[5].innerHTML+'" class="it pm"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="transfer pm" style="width:100%; height:100%;" value="'+tr.cells[5].innerHTML+'" class="transfer pm"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="story ready" style="width:100%; height:100%;" value="'+tr.cells[5].innerHTML+'" class="story ready"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="country" style="width:100%; height:100%;" value="'+tr.cells[5].innerHTML+'" class="country"/>';
+			trobj.appendChild(tdobj);
+			
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="start day" style="width:100%; height:100%;" value="'+tr.cells[3].innerHTML+'" class="start day"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="SIT day" style="width:100%; height:100%;" value="'+tr.cells[3].innerHTML+'" class="SIT day"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="UAT day" style="width:100%; height:100%;" value="'+tr.cells[3].innerHTML+'" class="UAT day"/>';
+			trobj.appendChild(tdobj);
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="end day" style="width:100%; height:100%;" value="'+tr.cells[4].innerHTML+'" class="end day"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML='<input type="text" name="remark" style="width:100%; height:100%;" value="'+tr.cells[4].innerHTML+'" class="remark"/>';
+			trobj.appendChild(tdobj);
+
+			var tdobj = document.createElement("td");
+			tdobj.innerHTML="<input type='button' value='删除' onclick=delecttr(this)  class='btn btn-danger'> <input type='button' value='保存' onclick=savecttr(this)  class='btn btn-success'>";
+			trobj.appendChild(tdobj);
+
+			tr.parentNode.replaceChild(trobj,tr);
+		}
+
+		function selectFile() {
+			document.getElementById('file').click();
+		}
+
+		// 读取本地excel文件
+		function readWorkbookFromLocalFile(file, callback) {
+			var reader = new FileReader();
+			reader.onload = function(e) {
+				var data = e.target.result;
+				var workbook = XLSX.read(data, {type: 'binary'});
+				if(callback) callback(workbook);
+			};
+			reader.readAsBinaryString(file);
+		}
+
+
+		function readWorkbook(workbook) {
+			var sheetNames = workbook.SheetNames; // 工作表名称集合
+			var worksheet = workbook.Sheets[sheetNames[0]]; // 这里我们只读取第一张sheet
+			var csv = XLSX.utils.sheet_to_csv(worksheet);
+			csv2table(csv);
+			// window.alert(csv)
+		}
+
+
+		// 将csv转换成表格
+		function csv2table(csv)
+		{
+
+			var tableobj =document.getElementById("tid");
+			var rows = csv.split('\n');
+		
+			rows.pop(); // 最后一行没用的
+			
+			for (var idx = 1; idx < rows.length;  idx++ ){
+			    var row = rows[idx];
+		
+				var trobj =document.createElement("tr");
+				var columns = row.split(',');
+
+				if (columns.length >= need_length){
+
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[0];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[1];
+					trobj.appendChild(tdobj);
+
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[2];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[3];
+					trobj.appendChild(tdobj);
+
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[4];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[5];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[6];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[7];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[8];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[9];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[10];
+					trobj.appendChild(tdobj);
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML = columns[11];
+					trobj.appendChild(tdobj);
+
+					var tdobj = document.createElement("td");
+					tdobj.innerHTML="<input type='button' value='删除' onclick=delecttr(this)  class='btn btn-danger'> <input type='button' value='修改' onclick=changecttr(this)  class='btn btn-warning'>";
+					trobj.appendChild(tdobj);
+					
+					tableobj.appendChild(trobj);
+				}else{
+					alert("每行数据需要超过" + need_length + "列")
+					return
+				}
+			
+			
+			}
+			
+			//rows.forEach();
+		}
+
+		onload = function(){
+			document.getElementById('file').addEventListener('change', function(e) {
+				// alert()
+				var files = e.target.files;
+				if(files.length == 0) return;
+				var f = files[0];
+				if(!/\.xlsx$/g.test(f.name)) {
+					alert('仅支持读取xlsx格式！');
+					return;
+				}
+				readWorkbookFromLocalFile(f, function(workbook) {
+					readWorkbook(workbook);
+				});
+			});
+		};
+
+	</script>
+	</head>
+	<body>
+
+		<table id="tid" class="table">
+			<thead class="thead-light">
+				<tr>
+					<td >Project Name</td>
+					<td >Effort</td>
+					<td >Pod</td>
+					<td >IT PM</td>
+					<td >Transfer PM</td>
+					<td >Story Ready</td>
+					<td >Country</td>
+					<td >Start Day</td>
+					<td >SIT Day</td>
+					<td >UAT Day</td>
+					<td >End Day</td>
+					<td >Remark</td>
+				</tr>
+			</thead>
+  			<tbody>
+<!-- 				<tr>
+					<td>1</td>
+					<td>樊坤</td>
+					<td><input type="button" value="删除" onclick="delecttr(this)" class='btn btn-danger'>
+						<input type="button" value="修改" onclick="changecttr(this)" class='btn btn-warning'></td>
+				</tr>
+				<tr>
+					<td>2</td>
+					<td>李玮</td>
+					<td><input type="button" value="删除" onclick="delecttr(this)" class='btn btn-danger'>
+						<input type="button" value="修改" onclick="changecttr(this)" class='btn btn-warning'></td>
+				</tr> -->
+			</tbody>
+		</table>
+		<div class="mt-sm">
+			<input type="button" value="添加行" onclick="addtr()" class='btn btn-dark'>
+			<input type="file" id="file" style="display:none;" accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"/>
+			<input type="button" value="上传xlsx文件" onclick="selectFile()" class='btn btn-dark'>
+		</div>
+
+	</body>
+</html>
