@@ -1,15 +1,119 @@
-insert Project,id=1 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1550196609000,UAT_date=1551406209000,Target_Rls_date=1561947009000,Delete_flag=false,update_person="kira"
+insert Project,id=1 project_ame="project1",effort=300,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1550196609000,UAT_date=1551406209000,Target_Rls_date=1561947009000,Delete_flag=false,update_person="kira"
+
+insert Task,id=1 task_name="analyse",project_id=1,project_ame="project1",effort=30,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="start",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Task,id=2 task_name="coding",project_id=1,project_ame="project1",effort=200,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="pending",priority="hign",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Task,id=3 task_name="UT",project_id=1,project_ame="project1",effort=70,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="pending",priority="normal",Remark="test",Delete_flag=false,update_person="kira"
 
 
-insert Project,id=2 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1552615809000,UAT_date=1554084609000,Target_Rls_date=1556676609000,Delete_flag=false,update_person="kira"
+insert TestCase,id=1 testcase_name="testcase1",project_id=1,project_ame="project1",effort=30,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="pending",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert TestCase,id=1 testcase_name="testcase2",project_id=1,project_ame="project1",effort=30,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="start",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert TestCase,id=1 testcase_name="testcase3",project_id=1,project_ame="project1",effort=30,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="doing",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert TestCase,id=1 testcase_name="testcase4",project_id=1,project_ame="project1",effort=30,Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="finished",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Issue,id=1 project_id=1,project_ame="project1",testcase_id=3,testcase_name="testcase3",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="fixed",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Issue,id=1 project_id=1,project_ame="project1",testcase_id=3,testcase_name="testcase3",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1555294209000,pod="leo",owner="kira",state="analyse",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
 
 
-insert Project,id=3 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1554084609000,SIT_date=1557886209000,UAT_date=1564625409000,Target_Rls_date=1575166209000,Delete_flag=false,update_person="kira"
+insert Issue,id=1 project_id=1,project_ame="project1",testcase_id=3,testcase_name="testcase3",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554430209000,pod="leo",owner="kira",state="analyse",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Issue,id=1 project_id=1,project_ame="test",testcase_id=1,testcase_name="testcase1",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1556676609000,pod="leo",owner="kira",state="analyse",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
 
 
 
-insert Issue,id=1 project_id=1,project_ame="test",testcase_id=1,testcase_name="fankun_1",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="finished",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
+insert Project,id=2 project_ame="project2",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1552615809000,UAT_date=1554084609000,Target_Rls_date=1556676609000,Delete_flag=false,update_person="kira"
+
+
+insert Project,id=3 project_ame="project3",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1554084609000,SIT_date=1557886209000,UAT_date=1564625409000,Target_Rls_date=1575166209000,Delete_flag=false,update_person="kira"
 
 
 
-insert TestCase,id=1 testcase_name="fankun_1",project_id=1,project_ame="test",effort=30,HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="pending",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+create table PROJECT (
+id number,
+project_name varchar(80),
+effort number,
+pod varchar(20),
+IT_PM varchar(20),
+transfor_PM varchar(20),
+Story_ready varchar(20),
+Country varchar(10),
+OB_REF varchar(20),
+start_date date,
+SIT_date date,
+UAT_date date,
+Target_Rls_date date,
+Delete_flag varchar(1),
+Remark varchar(60000),
+update_person varchar(20)
+);
+
+
+
+
+create table Issue (
+id number,
+project_id number,
+project_name varchar(80),
+testcase_id number,
+testcase_name varchar(80),
+effort number,
+HeadLine varchar(80),
+Detail varchar(60000),
+create_by varchar(20),
+create_date date,
+pod varchar(20),
+owner varchar(20),
+state varchar(20),
+priority varchar(20),
+analyze varchar(60000),
+Delete_flag varchar(1),
+Remark varchar(60000),
+update_person varchar(20)
+);
+
+create table testcase (
+id number,
+testcase_name varchar(80),
+project_id number,
+project_name varchar(80),
+effort number,
+Detail varchar(60000),
+create_by varchar(20),
+create_date date,
+pod varchar(20),
+owner varchar(20),
+state varchar(20),
+priority varchar(20),
+Delete_flag varchar(1),
+Remark varchar(60000),
+update_person varchar(20)
+);
+
+
+create table Task (
+id number,
+task_name varchar(80),
+Detail varchar(60000),
+project_id number,
+project_name varchar(80),
+create_by varchar(20),
+create_date date,
+pod varchar(20),
+owner varchar(20),
+state varchar(20),
+priority varchar(20),
+Delete_flag varchar(1),
+Remark varchar(60000),
+update_person varchar(20)
+);
+
+
+
+
+
