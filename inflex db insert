@@ -1,6 +1,15 @@
-insert Project,id=1 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1465839830100400200,SIT_date=1465839830100400200,UAT_date=1465839830100400200,Target_Rls_date=1465839830100400200,Delete_flag=false,update_person="kira"
+insert Project,id=1 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1550196609000,UAT_date=1551406209000,Target_Rls_date=1561947009000,Delete_flag=false,update_person="kira"
 
 
-insert Issue,id=1 project_id=1,project_ame="test",testcase_id=1,testcase_name="fankun_1",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1465839830100400200,pod="leo",owner="kira",state="finished",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
+insert Project,id=2 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1546308609000,SIT_date=1552615809000,UAT_date=1554084609000,Target_Rls_date=1556676609000,Delete_flag=false,update_person="kira"
 
-insert TestCase,id=1 testcase_name="fankun_1",project_id=1,project_ame="test",effort=30,HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1465839830100400200,pod="leo",owner="kira",state="pending",priority="low",Remark="test",Delete_flag=false,update_person="kira"
+
+insert Project,id=3 project_ame="test",effort=30,pod="leo",it_pm="kira",transfor_PM="kira",Story_ready=true,Country="HSAC",start_date=1554084609000,SIT_date=1557886209000,UAT_date=1564625409000,Target_Rls_date=1575166209000,Delete_flag=false,update_person="kira"
+
+
+
+insert Issue,id=1 project_id=1,project_ame="test",testcase_id=1,testcase_name="fankun_1",effort=30,pod="leo",HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="finished",priority="low",analyse="The code aaaa so this is iiiii",Remark="test",Delete_flag=false,update_person="kira"
+
+
+
+insert TestCase,id=1 testcase_name="fankun_1",project_id=1,project_ame="test",effort=30,HeadLine="test 1 for test",Detail="this is a test case which for test test test ",create_by="kira",create_date=1554084609000,pod="leo",owner="kira",state="pending",priority="low",Remark="test",Delete_flag=false,update_person="kira"
